@@ -64,7 +64,23 @@ def ex10(arr):
 if __name__ == '__main__':
     listaNum = list(range(1, 14))
     random.shuffle(listaNum)
-
-    listaString = ["Maçã", "Banana", "Laranja", "Uva", "Morango", "Abacaxi", "Melancia", "Pêssego", "Ameixa", "Kiwi", "Manga", "Cereja", "Limão"]
-
-    ex10(listaString)
+    listaString1 = ["Maçã", "Banana", "Laranja", "Uva", "Morango", "Abacaxi", "Melancia", "Pêssego", "Ameixa", "Kiwi", "Manga", "Cereja", "Limão"]
+    listaString2 = ["Pedro", "Ana", "Beatriz", "Dante", "Virgilio", "Atreus", "Ryan", "Lucas", "Matheus", "Marcos", "João", "Thiago", "Elyas"]
+    print("---------------------EX01----------------------------")
+    ex1()
+    print("---------------------EX2----------------------------")
+    ex2()
+    print("---------------------EX5----------------------------")
+    print(greatestNumber(listaNum))
+    print("---------------------EX6----------------------------")
+    print(ex6(16))
+    print("---------------------EX8----------------------------")
+    ex8(listaNum)
+    print("---------------------EX9----------------------------")
+    random.shuffle(listaNum)
+    ex9(listaNum)
+    random.shuffle(listaNum)
+    ex9(listaNum)
+    print("---------------------EX10----------------------------")
+    ex10(listaString1)
+    ex10(listaString2)
