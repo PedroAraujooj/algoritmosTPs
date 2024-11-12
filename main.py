@@ -1,7 +1,9 @@
 import random
 
 from Fila import Fila
+from FilaAtendimento import FilaAtendimento
 from Pilha import Pilha
+from TabelaHash import TabelaHash
 
 from tp1 import ex1, ex2, greatestNumber, ex6, ex8, ex9, ex10
 from tp2 import merge_sort, tp2_ex3_a, tp2_ex3_b, ordernar_pilha, ordena_fila, tarefa_no_topo, tp2_ex6, tp2_ex7, \
@@ -36,6 +38,22 @@ if __name__ == '__main__':
     fila.display()
     print("------------tp2-ex10-------------")
     print(tp2_ex10(Fila([34, 3, 31, 98, 92, 23])))
+    print("------------tp2-ex11-------------")
+
+    filaAtendimento = FilaAtendimento()
+    filaAtendimento.adicionar_cliente("Pedro")
+    filaAtendimento.adicionar_cliente("João")
+    filaAtendimento.atender_cliente()
+    print(filaAtendimento.tamanho_fila())
+
+    print("------------tp2-ex12-------------")
+
+    tabela = TabelaHash(6)
+    tabela.inserir(1, "Pedro")
+    print(tabela.buscar(1))
+    tabela.remover(1)
+    print(tabela.buscar(1))
+
 
 
 

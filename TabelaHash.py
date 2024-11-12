@@ -1,4 +1,4 @@
-class HashTable:
+class TabelaHash:
     def __init__(self, capacidade=10):
         self.capacidade = capacidade
         self.tabela = [[] for _ in range(capacidade)]
