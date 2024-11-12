@@ -1,86 +1,41 @@
 import random
 
+from Fila import Fila
+from Pilha import Pilha
 
-def ex1():
-    caracteres = [x for x in "Sítio do pica-pau amarelo \n 2023" if not x.isspace()]
-    for x in caracteres:
-        print(x)
-
-
-def ex2():
-    mao1 = [13, 8, 12, 2, 6, 9, 1, 11, 3, 4, 5, 10, 7]
-    for i in range(0, len(mao1)):
-        for j in range(i, len(mao1)):
-            if mao1[j] < mao1[i]:
-                mao1[j], mao1[i] = mao1[i], mao1[j]
-    print(mao1)
-
-
-def greatestNumber(array):
-    if len(array) == 0:
-        print("Array vazio")
-        return
-    greatest = array[0]
-    for i in array:
-        if i > greatest:
-            greatest = i
-    return greatest
-
-def ex6(num):
-    return (pow(num, 1/2)) + 1
-
-def ex8(arr):
-    for i in range(len(arr) - 1, int((len(arr)/2) - 1), -1):
-        k = int((len(arr)/2))
-        for j in range(i):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-
-        for j in range(i, k, -1):
-            if arr[j] < arr[j-1]:
-                arr[j], arr[j-1] = arr[j-1], arr[j]
-    print(arr)
-
-def ex9(arr):
-    print("velha lista: ")
-    print(arr)
-    for i in range(len(arr)-1, 0 , -1):
-        for j in range(i):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-    print("nova lista: ")
-    print(arr)
-
-def ex10(arr):
-    print("velha lista: ")
-    print(arr)
-    for i in range(len(arr)-1, 0 , -1):
-        for j in range(i):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-    print("nova lista: ")
-    print(arr)
+from tp1 import ex1, ex2, greatestNumber, ex6, ex8, ex9, ex10
+from tp2 import merge_sort, tp2_ex3_a, tp2_ex3_b, ordernar_pilha, ordena_fila, tarefa_no_topo, tp2_ex6, tp2_ex7, \
+    inverter_fila, tp2_ex10
 
 if __name__ == '__main__':
-    listaNum = list(range(1, 14))
+    listaNum = list(range(1, 15))
     random.shuffle(listaNum)
-    listaString1 = ["Maçã", "Banana", "Laranja", "Uva", "Morango", "Abacaxi", "Melancia", "Pêssego", "Ameixa", "Kiwi", "Manga", "Cereja", "Limão"]
-    listaString2 = ["Pedro", "Ana", "Beatriz", "Dante", "Virgilio", "Atreus", "Ryan", "Lucas", "Matheus", "Marcos", "João", "Thiago", "Elyas"]
-    print("---------------------EX01----------------------------")
-    ex1()
-    print("---------------------EX2----------------------------")
-    ex2()
-    print("---------------------EX5----------------------------")
-    print(greatestNumber(listaNum))
-    print("---------------------EX6----------------------------")
-    print(ex6(16))
-    print("---------------------EX8----------------------------")
-    ex8(listaNum)
-    print("---------------------EX9----------------------------")
-    random.shuffle(listaNum)
-    ex9(listaNum)
-    random.shuffle(listaNum)
-    ex9(listaNum)
-    print("---------------------EX10----------------------------")
-    ex10(listaString1)
-    ex10(listaString2)
+    print("----------tp2-ex2---------------")
+    print(merge_sort(listaNum))
+    print("------------tp2-ex3-a-------------")
+    print(tp2_ex3_a([0,1,1,9,75,7,76,7,766,72,7,9,3,9,7]))
+    print("-------------tp2-ex3-b------------")
+    print(tp2_ex3_b([0,1,1,9,75,7,76,7,766,72,7,9,3,9,7]))
+    print("------------tp2-ex4-ordenar pilha-------------")
+    pilha = Pilha([34, 3, 31, 98, 92, 23])
+    pilha = ordernar_pilha(pilha, Pilha([]), None)
+    pilha.display()
+    print("------------tp2-ex5-------------")
+    pilhaEx5 = Pilha([34, 3, 31, 98, 92, 23])
+    tarefa_no_topo(pilhaEx5)
+    print("------------tp2_ex6-------------")
+    print(tp2_ex6(Pilha([34, 3, 31, 98, 92, 23])))
+    print("------------tp2_ex7-------------")
+    print(tp2_ex7(Pilha([34, 3, 31, 98, 92, 23])))
+    print("------------tp2-ex8 - inverter_fila-------------")
+    novaFilaInversa =  inverter_fila(Fila([34, 3, 31, 98, 92, 23]))
+    novaFilaInversa.display()
+    print("------------tp2-ex9 - ordena_fila-------------")
+    fila = Fila([34, 3, 31, 98, 92, 23])
+    fila = ordena_fila(fila)
+    fila.display()
+    print("------------tp2-ex10-------------")
+    print(tp2_ex10(Fila([34, 3, 31, 98, 92, 23])))
+
+
+
