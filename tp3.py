@@ -123,7 +123,7 @@ def percorrer_arvore(raiz):
 def soma_lista_ex12(lista, total=0):
     if not lista:
         return total
-    return soma_lista(lista[1:], total + lista[0])
+    return soma_lista_ex12(lista[1:], total + lista[0])
 
 def palindromo(palavra):
     if len(palavra) == 0:
