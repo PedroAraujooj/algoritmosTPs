@@ -6,13 +6,17 @@ class FilaAtendimento:
         return len(self.itens) == 0
 
     def adicionar_cliente(self, item):
+        print(f"{item} entrou na fila")
         self.itens.append(item)
 
     def atender_cliente(self):
         if self.is_empty():
             print("A fila está vazia")
             return None
-        return self.itens.pop(0)
+
+        cliente_atendido = self.itens.pop(0)
+        print(f"{cliente_atendido} foi atendido")
+        return cliente_atendido
 
     def peek(self):
         if self.is_empty():

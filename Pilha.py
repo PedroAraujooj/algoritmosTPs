@@ -2,7 +2,9 @@ class Pilha:
     def __init__(self):
         self.itens = []
 
-    def __init__(self, lista):
+    def __init__(self, lista=None):
+        if lista is None:
+            lista = []
         self.itens = lista
 
     def is_empty(self):

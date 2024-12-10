@@ -20,8 +20,7 @@ class TabelaHash:
     def buscar(self, chave):
         indice = self.hash(chave)
         for par in self.tabela[indice]:
-            if par[0] == chave:
-                return par[1]
+            return par[1]
         return None
 
     def remover(self, chave):
