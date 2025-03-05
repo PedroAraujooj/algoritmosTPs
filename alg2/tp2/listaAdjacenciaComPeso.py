@@ -36,11 +36,7 @@ class GrafoComPesos:
                 break
 
             for adj in self.lista_adjacencia[vertice_atual]:
-                if isinstance(adj, tuple):
-                    vizinho = adj[0]
-                else:
-                    vizinho = adj
-
+                vizinho = adj[0]
                 if vizinho not in visitados:
                     visitados.add(vizinho)
                     pais[vizinho] = vertice_atual

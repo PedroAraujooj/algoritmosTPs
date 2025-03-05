@@ -67,10 +67,7 @@ class Grafo:
                 break
 
             for adj in self.lista_adjacencia[vertice_atual]:
-                if isinstance(adj, tuple):
-                    vizinho = adj[0]
-                else:
-                    vizinho = adj
+                vizinho = adj
 
                 if vizinho not in visitados:
                     visitados.add(vizinho)
