@@ -3,7 +3,7 @@ class MinHeap:
         self.heap = []
 
     def insert(self, item):
-        self.heap.append(item) # (3, 'Tarefa A')
+        self.heap.append(item)
         self._heapify_up(len(self.heap) - 1)
 
     def pop(self):
@@ -26,8 +26,8 @@ class MinHeap:
 
     def _heapify_down(self, index):
         smallest = index
-        left_child = 2 * index + 1  # 2i + 1
-        right_child = 2 * index + 2 # 2i + 2
+        left_child = 2 * index + 1
+        right_child = 2 * index + 2
 
         if left_child < len(self.heap) and self.heap[left_child][0] < self.heap[smallest][0]:
             smallest = left_child
@@ -37,6 +37,3 @@ class MinHeap:
         if smallest != index:
             self.heap[index], self.heap[smallest] = self.heap[smallest], self.heap[index]
             self._heapify_down(smallest)
-
-# tarefas = [(3, 'Tarefa A'), (1, 'Tarefa B'), (2, 'Tarefa C')]
-
