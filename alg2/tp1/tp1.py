@@ -1,6 +1,6 @@
-from alg2.MaxHeapComplet import MaxHeap
-from alg2.Trie import Trie
-from alg2.prioridadeMinHeap import MinHeap
+from alg2.tp1.MaxHeapComplet import MaxHeap
+from alg2.tp1.Trie import Trie
+from alg2.tp1.prioridadeMinHeap import MinHeap
 
 
 def tp13():
